@@ -1,0 +1,34 @@
+# Adjust these properties as needed for your local setup      #
+# On Windows, use forward-slashes / instead of back-slashes \ #
+# Save this file as 'local.properties' in your geoportal root #
+#-------------------------------------------------------------#
+
+local.tomcat.home=/var/lib/tomcat6
+local.ant.home=/usr/share/ant
+local.tomcat.manager=rclark
+local.tomcat.manager.password={secret}
+local.tomcat.manager.url=http://localhost:8080/manager
+local.lucene.index.location=/home/rclark/Documents/git/geoportal/lucene/index
+local.lucene.rating.location=/home/rclark/Documents/git/geoportal/lucene/ratings
+
+local.db.connection.string=jdbc:postgresql://localhost:5432/geoportal
+local.db.user.name={secret}
+local.db.user.password={secret}
+local.ldap.connection.string=ldap://localhost:10389
+
+remote.tomcat.manager={secret}
+remote.tomcat.manager.password={secret}
+remote.tomcat.manager.url=http://remote.machine.com/manager
+
+remote.db.connection.string=jdbc:postgresql://localhost:5432/geoportal
+remote.db.user.name={secret}
+remote.db.user.password={secret}
+remote.ldap.connection.string=ldap://localhost:10389
+remote.lucene.index.location=/mnt/ebs/geoportal/lucene
+remote.lucene.rating.location=/mnt/ebs/geoportal/rating
+
+development.tomcat.manager={secret}
+development.tomcat.manager.password={secret}
+development.tomcat.manager.url=http://sillimanite:8080/manager
+development.lucene.index.location=/home/administrator/lucene/index
+development.lucene.rating.location=/home/administrator/lucene/ratings
