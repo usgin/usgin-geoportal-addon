@@ -2,12 +2,12 @@
 	<!-- local.properties must be supplied by the user -->
 	<property file="local.properties"/>
 
-	<property name='src.dir'       value='../src'/>
-	<property name='lib.dir'       value='../lib'/>
-	<property name='build.dir'     value='../build'/>
+	<property name='src.dir'       value='../../src'/>
+	<property name='lib.dir'       value='../../lib'/>
+	<property name='build.dir'     value='../../build'/>
 	<property name='classes.dir'   value='${build.dir}/WEB-INF/classes'/>
 	<property name="jar.dir"       value="${build.dir}/jar"/>
-	<property name='www.dir'       value='../www'/>
+	<property name='www.dir'       value='../../www'/>
 	<property name='template.dir'  value='templates'/>
 	
 	<!-- =========================================================================================== -->
