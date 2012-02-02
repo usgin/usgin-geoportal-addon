@@ -1,0 +1,13 @@
+diff --git a/src/gpt/metadata/schemas.xml b/src/gpt/metadata/schemas.xml
+index 4f093d6..b2de946 100644
+--- a/src/gpt/metadata/schemas.xml
++++ b/src/gpt/metadata/schemas.xml
+@@ -25,6 +25,8 @@
+   <schema fileName="gpt/metadata/iso/nap/nap-iso-19115-definition.xml"/>
+   <schema fileName="gpt/metadata/iso/nap/nap-iso-19119-definition.xml"/>
+   
++  <schema fileName="gpt/metadata/iso/usgin/usgin-iso-19115-definition.xml"/>
++  
+   <!-- UK GEMINI 2.1 
+     GEMINI document interrogation rules are based upon
+     gmd:metadataStandardVersion[gco:CharacterString='UK GEMINI 2.1']

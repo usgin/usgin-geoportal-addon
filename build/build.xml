@@ -89,12 +89,30 @@
 	  
 	  <copy file='${template.dir}/context-template.xml' tofile='${build.dir}/META-INF/context.xml'/>	
 	  <copy file='${template.dir}/gpt-template.xml' tofile='${classes.dir}/gpt/config/gpt.xml'/>
+	  <copy file='${template.dir}/metadata/usgin-iso-19115-definition.xml' tofile='${classes.dir}/gpt/metadata/iso/usgin/usgin-iso-19115-definition.xml'/>
+	  <copy file='${template.dir}/metadata/usgin-indexables.xml' tofile='${classes.dir}/gpt/metadata/iso/usgin/usgin-indexables.xml'/>
+	</target>
+	
+	<!-- =========================================================================================== -->
+	<!-- Perform replacements in config files for the USGIN ISO Profile.                             -->
+	<!-- =========================================================================================== -->
+	<target name="usgin.package" depends="dist" description="Perform replacements in config files for the USGIN ISO Profile">
+	
+		<!-- Adjust the schemas.xml document - Adds the usgin-iso schema to interrogation list -->
+		<patch patchfile="${template.dir}/metadata/usgin-schemas.patch" originalfile="${classes.dir}/gpt/metadata/schemas.xml" />
+		
+		<!-- Adjust the property-meanings.xml document - Adds service-specific url meanings and applies them to Dublin Core ouptuts -->
+		<patch patchfile="${template.dir}/metadata/usgin-property-meanings.patch" originalfile="${classes.dir}/gpt/metadata/property-meanings.xml" />
+		
+		<!-- Adjust the apiso-indexables.xml document - Index the service-specific url meanings so that they can be included in Dublin Core outputs 
+		<patch patchfile="${template.dir}/metadata/usgin-apiso-indexables.patch" originalfile="${classes.dir}/gpt/metadata/iso/apiso-indexables.xml" />
+		-->
 	</target>
 	
 	<!-- =========================================================================================== -->
 	<!-- Perform replacements in config files for a local install.                                   -->
 	<!-- =========================================================================================== -->
-	<target name="local.package" depends='dist' description="Perform replacements in config files for a local install">
+	<target name="local.package" depends='dist, usgin.package' description="Perform replacements in config files for a local install">
 	  
 	  <!-- Copy the context-template file and replace variables with values from local.properties -->	  
 	  <replace file='${build.dir}/META-INF/context.xml' token='$(db.connection.string)' value='${local.db.connection.string}' />
@@ -110,14 +128,14 @@
 	  <replace file='${classes.dir}/gpt/config/gpt.xml' token='$(mail.emailAddress)' value='${mail.emailAddress}' />
       <replace file='${classes.dir}/gpt/config/gpt.xml' token='$(mail.username)' value='${mail.username}' />
 	  <replace file='${classes.dir}/gpt/config/gpt.xml' token='$(mail.password)' value='${mail.password}' />
-	  <replace file='${classes.dir}/gpt/config/gpt.xml' token='$(admin.name)' value='${remote.admin.name}' />
-	  <replace file='${classes.dir}/gpt/config/gpt.xml' token='$(admin.password)' value='${remote.admin.password}' />
+	  <replace file='${classes.dir}/gpt/config/gpt.xml' token='$(admin.name)' value='${local.admin.name}' />
+	  <replace file='${classes.dir}/gpt/config/gpt.xml' token='$(admin.password)' value='${local.admin.password}' />
 	</target>
 	
 	<!-- =========================================================================================== -->
 	<!-- Perform replacements in config files for a remote install.                                  -->
 	<!-- =========================================================================================== -->
-	<target name="remote.package" depends='dist' description="Perform replacements in config files for a remote install">
+	<target name="remote.package" depends='dist, usgin.package' description="Perform replacements in config files for a remote install">
 	  
 	  <!-- Copy the context-template file and replace variables with values from local.properties -->
 	  <replace file='${build.dir}/META-INF/context.xml' token='$(db.connection.string)' value='${remote.db.connection.string}' />
@@ -154,7 +172,7 @@
 	  <deploy url="${local.tomcat.manager.url}"
 			  username="${local.tomcat.manager}"
 			  password="${local.tomcat.manager.password}"
-			  path="/geoportal"
+			  path="/${local.geoportal.path}"
 			  update="true"
 			  war="${build.dir}/geoportal.war"/>
 
@@ -168,7 +186,7 @@
 	  <deploy url="${remote.tomcat.manager.url}"
 			  username="${remote.tomcat.manager}"
 			  password="${remote.tomcat.manager.password}"
-			  path="/geoportal"
+			  path="/${remote.geoportal.path}"
 			  update="true"
 			  war="${build.dir}/geoportal.war"/>
 
