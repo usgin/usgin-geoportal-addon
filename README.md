@@ -13,9 +13,9 @@
 ## Installation
 1. Copy this repository into a geoportal trunk checkout
 
-	svn co https://geoportal.svn.sourceforge.net/svnroot/geoportal/Geoportal/trunk geoportal
-	cd geoportal
-	git clone git://github.com/usgin/usgin-geoportal-addon.git usgin
+		svn co https://geoportal.svn.sourceforge.net/svnroot/geoportal/Geoportal/trunk geoportal
+		cd geoportal
+		git clone git://github.com/usgin/usgin-geoportal-addon.git usgin
 	
 2. Copy `usgin/build/local.properties-example` to `usgin/build/local.properties`
 3. Adjust the configuration options in `usgin/build/local.properties`. For a local, development environment and a remote, production environment, specify:
