@@ -4,10 +4,10 @@
 - Use Ant to deploy the compiled application to a development environment or a production environment
 
 ## Pre-requisites:
-	1. Tomcat 6.x installed with manager app
-	2. Apache Ant installed and functional
-	3. PostgreSQL database engine setup and running
-	4. Database created and populated with Geoportal tables. `geoportal/etc/sql/schema_pg.sql` should do the trick.
+1. Tomcat 6.x installed with manager app
+2. Apache Ant installed and functional
+3. PostgreSQL database engine setup and running
+4. Database created and populated with Geoportal tables. `geoportal/etc/sql/schema_pg.sql` should do the trick.
 
 
 ## Installation
@@ -18,7 +18,7 @@
 	- Database access information
 	- Lucene index locations
 	- Geoportal single login information
-3. Download the appropriate PostgreSQL JDBC driver for your installation: http://jdbc.postgresql.org/download.html, place in `usgin/build/lib`
+3. Download the appropriate PostgreSQL JDBC driver for your installation: [Download Page](http://jdbc.postgresql.org/download.html), place in `usgin/build/lib`
 4. Run the Ant build.xml with the appropriate task
 	- clean: empty the build directory
 	- local.package: Compile the source code and generate the application in the build directory. For a local disribution
