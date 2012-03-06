@@ -11,15 +11,21 @@
 
 
 ## Installation
-1. Copy local.properties-example to local.properties
-2. Adjust the configuration options in local.properties. For a local, development environment and a remote, production environment, specify:
+1. Copy this repository into a geoportal trunk checkout
+
+	svn co https://geoportal.svn.sourceforge.net/svnroot/geoportal/Geoportal/trunk geoportal
+	cd geoportal
+	git clone git://github.com/usgin/usgin-geoportal-addon.git usgin
+	
+2. Copy `usgin/build/local.properties-example` to `usgin/build/local.properties`
+3. Adjust the configuration options in `usgin/build/local.properties`. For a local, development environment and a remote, production environment, specify:
 	- Tomcat Access information
 	- Final Geoportal webapp URL
 	- Database access information
 	- Lucene index locations
 	- Geoportal single login information
-3. Download the appropriate PostgreSQL JDBC driver for your installation: [Download Page](http://jdbc.postgresql.org/download.html), place in `usgin/build/lib`
-4. Run the Ant build.xml with the appropriate task
+4. Download the appropriate PostgreSQL JDBC driver for your installation: [Download Page](http://jdbc.postgresql.org/download.html), place in `usgin/build/lib`
+5. Run the Ant build.xml with the appropriate task
 	- clean: empty the build directory
 	- local.package: Compile the source code and generate the application in the build directory. For a local disribution
 	- remote.package: Same as above, but for a remote distribution
