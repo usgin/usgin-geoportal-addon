@@ -1,6 +1,9 @@
 ## The Idea
 - Provide an effecient mechanism for building the Geoportal web application from source code
-- Simplify the installation process by making some assumptions about the setup environment
+- Simplify the installation process by making some assumptions about the setup environment:
+	- You're happy using Tomcat
+	- You're happy using PostgreSQL
+	- You're happy with having a single admin user, rather than a managed LDAP authentication system.
 - Use Ant to deploy the compiled application to a development environment or a production environment
 
 ## Pre-requisites:
