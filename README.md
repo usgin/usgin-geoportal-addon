@@ -8,7 +8,9 @@
 
 ## Pre-requisites:
 1. Tomcat 6.x installed with manager app
-2. Apache Ant installed and functional
+2. Apache Ant installed and functional: Must have access to `catalina-ant.jar`
+	- This means finding `catalina-ant.jar` in Tomcat's `lib` directory, and copying it to Ant's `lib`
+	- On Ubuntu, if you installated via `sudo apt-get install ant tomcat6`, you can probably `sudo ln -s /usr/share/tomcat6/lib/catalina-ant.jar /usr/share/ant/lib/`
 3. PostgreSQL database engine setup and running
 4. Database created and populated with Geoportal tables. `geoportal/etc/sql/schema_pg.sql` should do the trick.
 
@@ -28,7 +30,7 @@
 	- Lucene index locations
 	- Geoportal single login information
 4. Download the appropriate PostgreSQL JDBC driver for your installation: [Download Page](http://jdbc.postgresql.org/download.html), place in `usgin/build/lib`
-5. Run the Ant build.xml with the appropriate task
+5. Run the Ant build.xml with the appropriate task, for example `ant local.deploy`.
 	- clean: empty the build directory
 	- local.package: Compile the source code and generate the application in the build directory. For a local disribution
 	- remote.package: Same as above, but for a remote distribution
