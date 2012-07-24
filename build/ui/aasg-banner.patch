@@ -1,0 +1,13 @@
+diff --git a/Users/ryan/lib/geoportal/www/catalog/skins/tiles/banner.jsp b/banner.jsp
+index 864eedc..7e9aec5 100644
+--- a/Users/ryan/lib/geoportal/www/catalog/skins/tiles/banner.jsp
++++ b/banner.jsp
+@@ -39,7 +39,7 @@
+ </f:verbatim>
+ 
+ <div id="gptTitle">
+-	<%=com.esri.gpt.framework.jsf.PageContext.extract().getSiteTitle()%>
++	AASG Geothermal Data Catalog Administration
+ </div>
+ 
+ <h:form id="frmTertiaryNavigation">

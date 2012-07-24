@@ -7,8 +7,9 @@
 	<property name='build.dir'     value='../../build'/>
 	<property name='classes.dir'   value='${build.dir}/WEB-INF/classes'/>
 	<property name="jar.dir"       value="${build.dir}/jar"/>
-	<property name='www.dir'       value='../../www'/>
+	<property name='www.dir'       value='../../www'/>	
 	<property name='template.dir'  value='templates'/>
+	<property name='ui.dir'		   value='ui'/>
 	
 	<!-- =========================================================================================== -->
 	<!-- Include the ant tasks required to manage the project's Tomcat web application.  These tasks -->
@@ -85,19 +86,20 @@
 
 	  <copy todir='${classes.dir}'>
 		 <fileset dir='${src.dir}' includes='**/*.properties' excludes='**/*.bak,**/*.log'/>
-	  </copy>
-	  
-	  <copy file='${template.dir}/context-template.xml' tofile='${build.dir}/META-INF/context.xml'/>	
-	  <copy file='${template.dir}/gpt-template.xml' tofile='${classes.dir}/gpt/config/gpt.xml'/>
-	  <copy file='${template.dir}/metadata/usgin-iso-19115-definition.xml' tofile='${classes.dir}/gpt/metadata/iso/usgin/usgin-iso-19115-definition.xml'/>
-	  <copy file='${template.dir}/metadata/usgin-indexables.xml' tofile='${classes.dir}/gpt/metadata/iso/usgin/usgin-indexables.xml'/>
+	  </copy>	  	  
 	</target>
 	
 	<!-- =========================================================================================== -->
 	<!-- Perform replacements in config files for the USGIN ISO Profile.                             -->
 	<!-- =========================================================================================== -->
 	<target name="usgin.package" depends="dist" description="Perform replacements in config files for the USGIN ISO Profile">
-	
+		
+		<!-- Copy files relevant to the USGIN-styled Installation -->
+		<copy file='${template.dir}/context-template.xml' tofile='${build.dir}/META-INF/context.xml'/>	
+		<copy file='${template.dir}/gpt-template.xml' tofile='${classes.dir}/gpt/config/gpt.xml'/>
+		<copy file='${template.dir}/metadata/usgin-iso-19115-definition.xml' tofile='${classes.dir}/gpt/metadata/iso/usgin/usgin-iso-19115-definition.xml'/>
+		<copy file='${template.dir}/metadata/usgin-indexables.xml' tofile='${classes.dir}/gpt/metadata/iso/usgin/usgin-indexables.xml'/>
+		
 		<!-- Adjust the schemas.xml document - Adds the usgin-iso schema to interrogation list -->
 		<patch patchfile="${template.dir}/metadata/usgin-schemas.patch" originalfile="${classes.dir}/gpt/metadata/schemas.xml" />
 		
@@ -110,13 +112,27 @@
 	</target>
 	
 	<!-- =========================================================================================== -->
+	<!-- Perform replacements in config files for the AASG Frontpage.                                -->
+	<!-- =========================================================================================== -->
+	<target name="aasg.frontpage" depends="dist" description="Perform replacements in config files for the AASG Frontpage.">
+		<!-- Adjust the homeBocy.jsp, footer.jsp and banner.jsp files. -->
+		<patch patchfile="${ui.dir}/aasg-homeBody.patch" originalFile="${build.dir}/catalog/main/homeBody.jsp" />				
+		<patch patchfile="${ui.dir}/aasg-footer.patch" originalFile="${build.dir}/catalog/skins/tiles/footer.jsp" />
+		<patch patchfile="${ui.dir}/aasg-banner.patch" originalFile="${build.dir}/catalog/skins/tiles/banner.jsp" />
+		
+		<!-- Copy images -->
+		<copy file='${ui.dir}/doe_banner_50h.png' toFile='${build.dir}/catalog/images/doe_banner_50h.png' />
+		<copy file='${ui.dir}/nsf_banner_50h.png' toFile='${build.dir}/catalog/images/nsf_banner_50h.png' />
+	</target>
+	
+	<!-- =========================================================================================== -->
 	<!-- Perform replacements in config files for a local install.                                   -->
 	<!-- =========================================================================================== -->
-	<target name="local.package" depends='dist, usgin.package' description="Perform replacements in config files for a local install">
+	<target name="local.package" depends='usgin.package' description="Perform replacements in config files for a local install">
 	  
 	  <!-- Copy the context-template file and replace variables with values from local.properties -->	  
 	  <replace file='${build.dir}/META-INF/context.xml' token='$(db.connection.string)' value='${local.db.connection.string}' />
-	  <replace file='${build.dir}/META-INF/context.xml' token='$(db.user.name)' value='${local.db.user.password}' />
+	  <replace file='${build.dir}/META-INF/context.xml' token='$(db.user.name)' value='${local.db.user.name}' />
 	  <replace file='${build.dir}/META-INF/context.xml' token='$(db.user.password)' value='${local.db.user.password}' />
 	  
 	  <!-- Copy the gpt-template file and replace variables with values from local.properties -->	  
@@ -135,7 +151,7 @@
 	<!-- =========================================================================================== -->
 	<!-- Perform replacements in config files for a remote install.                                  -->
 	<!-- =========================================================================================== -->
-	<target name="remote.package" depends='dist, usgin.package' description="Perform replacements in config files for a remote install">
+	<target name="remote.package" depends='usgin.package' description="Perform replacements in config files for a remote install">
 	  
 	  <!-- Copy the context-template file and replace variables with values from local.properties -->
 	  <replace file='${build.dir}/META-INF/context.xml' token='$(db.connection.string)' value='${remote.db.connection.string}' />
@@ -182,6 +198,34 @@
 	<!-- Install to remote Tomcat server.                                                            -->
 	<!-- =========================================================================================== -->
 	<target name="remote.deploy" depends="clean, remote.package, war" description="Install to remote Tomcat server">
+
+	  <deploy url="${remote.tomcat.manager.url}"
+			  username="${remote.tomcat.manager}"
+			  password="${remote.tomcat.manager.password}"
+			  path="/${remote.geoportal.path}"
+			  update="true"
+			  war="${build.dir}/geoportal.war"/>
+
+	</target>
+	
+	<!-- =========================================================================================== -->
+	<!-- Install AASG-configured to local Tomcat server.                                             -->
+	<!-- =========================================================================================== -->
+	<target name="local.aasg.deploy" depends="clean, local.package, aasg.frontpage, war" description="Install to local Tomcat server">
+		
+		<deploy url="${local.tomcat.manager.url}"
+			username="${local.tomcat.manager}"
+			password="${local.tomcat.manager.password}"
+			path="/${local.geoportal.path}"
+			update="true"
+			war="${build.dir}/geoportal.war"/>
+
+	</target>
+	
+	<!-- =========================================================================================== -->
+	<!-- Install AASG-configured to remote Tomcat server.                                            -->
+	<!-- =========================================================================================== -->
+	<target name="remote.aasg.deploy" depends="clean, remote.package, aasg.frontpage, war" description="Install to remote Tomcat server">
 
 	  <deploy url="${remote.tomcat.manager.url}"
 			  username="${remote.tomcat.manager}"
