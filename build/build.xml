@@ -119,10 +119,11 @@
 		<patch patchfile="${ui.dir}/aasg-homeBody.patch" originalFile="${build.dir}/catalog/main/homeBody.jsp" />				
 		<patch patchfile="${ui.dir}/aasg-footer.patch" originalFile="${build.dir}/catalog/skins/tiles/footer.jsp" />
 		<patch patchfile="${ui.dir}/aasg-banner.patch" originalFile="${build.dir}/catalog/skins/tiles/banner.jsp" />
+		<replace file="${build.dir}/catalog/main/homeBody.jsp" token='$(search.domain)' value='http://search.stategeothermaldata.org' />
 		
 		<!-- Copy images -->
 		<copy file='${ui.dir}/doe_banner_50h.png' toFile='${build.dir}/catalog/images/doe_banner_50h.png' />
-		<copy file='${ui.dir}/nsf_banner_50h.png' toFile='${build.dir}/catalog/images/nsf_banner_50h.png' />
+		<copy file='${ui.dir}/nsf_banner_50h.png' toFile='${build.dir}/catalog/images/nsf_banner_50h.png' />		
 	</target>
 	
 	<!-- =========================================================================================== -->

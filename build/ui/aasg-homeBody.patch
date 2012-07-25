@@ -106,7 +106,7 @@ index da1b9db..b1212e1 100644
 +	<p>&nbsp;</p>
 +	<h1>
 +		<center>
-+			<a href="/search/">Please Click Here To Search the AASG Geothermal Data Catalog</a>
++			<a href="$(search.domain)">Please Click Here To Search the AASG Geothermal Data Catalog</a>
 +		</center>
 +	</h1>	
 +	<div style='padding-right: 25px; padding-left: 25px;'>        
