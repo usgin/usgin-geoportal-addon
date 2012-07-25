@@ -11,5 +11,5 @@ index b9be9aa..092e1ed 100644
 +catalog.gemet.search = Search
 +
 +# USGIN ===================================
-+catalog.mdParam.schema.iso19139.usgin = "USGIN Profile (ISO 19139)"
++catalog.mdParam.schema.iso19139.usgin = USGIN Profile (ISO 19139)
 \ No newline at end of file
