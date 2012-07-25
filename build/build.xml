@@ -106,6 +106,9 @@
 		<!-- Adjust the property-meanings.xml document - Adds service-specific url meanings and applies them to Dublin Core ouptuts -->
 		<patch patchfile="${template.dir}/metadata/usgin-property-meanings.patch" originalfile="${classes.dir}/gpt/metadata/property-meanings.xml" />
 		
+		<!-- Adjust gpt.properties document - Adds some silly labels to be used elsewhere in the app -->
+		<patch patchfile="${template.dir}/metadata/usgin-gpt-properties.patch" originalfile="${classes.dir}/gpt/resources/gpt.properties" />
+		
 		<!-- Adjust the apiso-indexables.xml document - Index the service-specific url meanings so that they can be included in Dublin Core outputs 
 		<patch patchfile="${template.dir}/metadata/usgin-apiso-indexables.patch" originalfile="${classes.dir}/gpt/metadata/iso/apiso-indexables.xml" />
 		-->

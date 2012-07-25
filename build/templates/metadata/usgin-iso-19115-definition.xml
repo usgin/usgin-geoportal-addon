@@ -22,7 +22,7 @@
         xsdLocation="http://www.isotc211.org/2005/gmd/metadataEntity.xsd">
   
   <!-- schema label -->
-  <label resourceKey="catalog.mdParam.schema.iso19139.coregeog"/>
+  <label resourceKey="catalog.mdParam.schema.iso19139.usgin"/>
 
   <!-- schema namespaces -->
   <namespace prefix="gmd" uri="http://www.isotc211.org/2005/gmd"/>
