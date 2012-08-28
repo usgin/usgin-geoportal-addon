@@ -135,7 +135,7 @@
         - className: class name of the map viewer instance, e.g., for Flex example is com.esri.gpt.catalog.search.MapViewerFlex. 
 			NOTE: The MapViewerFlex must be in the same domain and port in order for layering of resources to work 
     -->
-    <!-- The Geoportal Flex widget configuration for ArcGIS View for Flex 2.2 -->
+    <!-- The Geoportal Flex widget configuration for ArcGIS View for Flex 2.2 
     <mapViewer>
         <instance 
             url="{contextPath}/viewer/index.jsp" 
@@ -144,7 +144,7 @@
         <parameter key="height" value="700"/>
         <parameter key="regexCanConsumeUrl" value=""/>
         </instance>
-    </mapViewer>
+    </mapViewer>-->
       
     <!-- The map viewer configuration for Portal for ArcGIS  
     <mapViewer>
