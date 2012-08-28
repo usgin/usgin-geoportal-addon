@@ -115,10 +115,10 @@
 	</target>
 	
 	<!-- =========================================================================================== -->
-	<!-- Perform replacements in config files for the AASG Frontpage.                                -->
+	<!-- Perform replacements in config files for the AASG Frontpage and CSW GetCapabilities         -->
 	<!-- =========================================================================================== -->
 	<target name="aasg.frontpage" depends="dist" description="Perform replacements in config files for the AASG Frontpage.">
-		<!-- Adjust the homeBocy.jsp, footer.jsp and banner.jsp files. -->
+		<!-- Adjust the homeBody.jsp, footer.jsp and banner.jsp files. -->
 		<patch patchfile="${ui.dir}/aasg-homeBody.patch" originalFile="${build.dir}/catalog/main/homeBody.jsp" />				
 		<patch patchfile="${ui.dir}/aasg-footer.patch" originalFile="${build.dir}/catalog/skins/tiles/footer.jsp" />
 		<patch patchfile="${ui.dir}/aasg-banner.patch" originalFile="${build.dir}/catalog/skins/tiles/banner.jsp" />
@@ -127,6 +127,9 @@
 		<!-- Copy images -->
 		<copy file='${ui.dir}/doe_banner_50h.png' toFile='${build.dir}/catalog/images/doe_banner_50h.png' />
 		<copy file='${ui.dir}/nsf_banner_50h.png' toFile='${build.dir}/catalog/images/nsf_banner_50h.png' />		
+		
+		<!-- Copy CSW GetCapabilities file -->
+		<copy file='${template.dir}/aasg-cswCapabilities.xml' toFile='${classes.dir}/gpt/metadata/cswCapabilities.xml' overwrite='true'/>
 	</target>
 	
 	<!-- =========================================================================================== -->
