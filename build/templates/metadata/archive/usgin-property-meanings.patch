@@ -1,0 +1,49 @@
+diff --git a/src/gpt/metadata/property-meanings.xml b/src/gpt/metadata/property-meanings.xml
+index fc56b90..a622f9b 100644
+--- a/src/gpt/metadata/property-meanings.xml
++++ b/src/gpt/metadata/property-meanings.xml
+@@ -137,6 +137,7 @@
+         <meaning-names>contentType,dataTheme</meaning-names>
+         <meaning-names>dateModified,abstract</meaning-names>
+         <meaning-names>resource.url,website.url,thumbnail.url,xml.url</meaning-names>
++        <meaning-names>resource.wms.url,resource.wfs.url,resource.wcs.url,resource.esri.url,resource.opendap.url</meaning-names>
+         <meaning-names>geometry,date,relation</meaning-names>
+       </dc>
+     </summary>
+@@ -146,6 +147,7 @@
+         <meaning-names>contentType,dataTheme</meaning-names>
+         <meaning-names>dateModified,abstract</meaning-names>
+         <meaning-names>resource.url,website.url,thumbnail.url,xml.url</meaning-names>
++        <meaning-names>resource.wms.url,resource.wfs.url,resource.wcs.url,resource.esri.url,resource.opendap.url</meaning-names>
+         <meaning-names>geometry,date,relation</meaning-names>
+         <meaning-names>sys.siteuuid,isPartOf</meaning-names>
+       </dc>
+@@ -329,5 +331,27 @@
+   
+   <property-meaning name="fgdc.multidate" valueType="Timestamp" comparisonType="value">
+   </property-meaning>
+-        
++  
++  <!-- USGIN ISO Property Meanings -->
++
++	<property-meaning name="resource.wms.url" valueType="String" comparisonType="value">
++		<dc name="dct:references" scheme="OGC:WMS"/>
++	</property-meaning>
++	
++	<property-meaning name="resource.wfs.url" valueType="String" comparisonType="value">
++		<dc name="dct:references" scheme="OGC:WFS"/>
++	</property-meaning>
++	
++	<property-meaning name="resource.wcs.url" valueType="String" comparisonType="value">
++		<dc name="dct:references" scheme="OGC:WCS"/>
++	</property-meaning>
++	
++	<property-meaning name="resource.esri.url" valueType="String" comparisonType="value">
++		<dc name="dct:references" scheme="ESRI"/>
++	</property-meaning>
++	
++	<property-meaning name="resource.opendap.url" valueType="String" comparisonType="value">
++		<dc name="dct:references" scheme="OPeNDAP"/>
++	</property-meaning>
++	      
+ </property-meanings>

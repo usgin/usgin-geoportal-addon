@@ -1,0 +1,402 @@
+--- /usr/local/tomcat6/webapps/geoportal/WEB-INF/classes/gpt/resources/gpt.properties	2013-04-09 15:03:14.000000000 -0700
++++ /home/srichard/Dropbox/GeoportalUSGIN/working version/gpt.properties.new	2013-04-05 11:23:38.000000000 -0700
+@@ -4093,6 +4093,7 @@
+ catalog.cart.isfull = The cart is full; maximum items: {0}
+ catalog.cart.item.count = ({0} items)
+ catalog.cart.item.count.one = (1 item)
++
+ catalog.cart.max.tip = Maximum items: {0}
+ catalog.cart.remove.tip = Remove item
+ catalog.cart.check.tip = Check to add item to cart
+@@ -4102,5 +4103,388 @@
+ 
+ catalog.gemet.search = Search
+ 
+-# USGIN ===================================
+-catalog.mdParam.schema.iso19139.usgin = USGIN Profile (ISO 19139)
+\ No newline at end of file
++# USGIN #####################################
++catalog.usgin.schema.dataset.19115 = USGIN/ISO Dataset
++catalog.usgin.schema.dataset.isousgin = ISO to USGIN
++
++
++# USGIN Resource Description ###############
++catalog.usgin.resource.description.caption = Resource Decription
++catalog.usgin.resource.individualName		 = Author:	
++catalog.usgin.resource.organisationName      = Organisation Name:
++catalog.usgin.resource.positionName          = Position Name/ Job Title:
++catalog.usgin.resource.role 	     = Role:
++catalog.usgin.resource.role.author   			= Author
++catalog.usgin.resource.role.custodian 			= Custodian
++catalog.usgin.resource.role.distributor 		= Distributor
++catalog.usgin.resource.role.originator 		    = Originator
++catalog.usgin.resource.role.owner 				= Owner 
++catalog.usgin.resource.role.pointOfContact      = Point Of Contact
++catalog.usgin.resource.role.principalInvestigator = Principal Investigator
++catalog.usgin.resource.role.processor           = Processor 
++catalog.usgin.resource.role.publisher           = Publisher 
++catalog.usgin.resource.role.resourceProvider    = Resource Provider
++catalog.usgin.resource.role.user                = User 
++catalog.usgin.resource.organisation  = Organisation:
++catalog.usgin.resource.title		 = Title:
++
++catalog.usgin.resource.date 		 = Reference Date:
++catalog.usgin.resource.abstract		 = Abstract:
++
++# USGIN Resource Contact#####################
++catalog.usgin.resource.contactDetails.caption = Resource Contact Details
++catalog.usgin.resource.individualName = Contact Name:
++catalog.usgin.resource.telephone      = Telephone Number:
++catalog.usgin.resource.address 		  = Address:
++catalog.usgin.resource.state 		  = State:
++catalog.usgin.resource.city			  = City:
++catalog.usgin.resource.postalCode	  = Postal Code:
++catalog.usgin.resource.email		  = Email:
++catalog.usgin.resource.contactURL	  = Webiste:
++
++# USGIN Resource Details######################
++catalog.usgin.resource.details.caption = Resource Details
++catalog.usgin.resource.language        = Resource Language:
++catalog.usgin.dataset.uri              = Dataset Identifier:
++catalog.usgin.resource.status          = Resource Maintenance Status:
++catalog.usgin.resource.status.completed			= Completed
++catalog.usgin.resource.status.historicalArchive = Historical Archive
++catalog.usgin.resource.status.obsolete          = Obsolete 
++catalog.usgin.resource.status.onGoing           = On Going
++catalog.usgin.resource.status.planned           = Planned 
++catalog.usgin.resource.status.required          = Required  
++catalog.usgin.resource.status.underDevelopment  = Under Development
++catalog.usgin.resource.constraints      = Legal or security constraints:
++catalog.usgin.resource.constraints.hint = Describe any legal or security restrictions on access to the resource
++catalog.usgin.resource.lineage          = Lineage:
++catalog.usgin.resource.quality          = Quality summary:
++#USGIN Maintenance ##############################
++catalog.usgin.maintenance.maintenanceNote = Maintenance Note:
++
++#USGIN Resource Browse Graphic ###############
++catalog.usgin.resource.browseGraphic.caption = Browse Graphic								 
++catalog.usgin.resource.graphic.label    = Label:
++catalog.usgin.resource.graphic.URL      = URL:
++catalog.usgin.resource.graphic.fileType = File Type:
++catalog.usgin.resource.graphic.fileType.bmp     = bmp
++catalog.usgin.resource.graphic.fileType.dwg     = dwg
++catalog.usgin.resource.graphic.fileType.dxf     = dxf
++catalog.usgin.resource.graphic.fileType.eps     = eps
++catalog.usgin.resource.graphic.fileType.geotiff = geotiff
++catalog.usgin.resource.graphic.fileType.git     = git
++catalog.usgin.resource.graphic.fileType.gml     = gml
++catalog.usgin.resource.graphic.fileType.html    = html
++catalog.usgin.resource.graphic.fileType.jpg     = jpg
++catalog.usgin.resource.graphic.fileType.pfd     = pfd
++catalog.usgin.resource.graphic.fileType.png     = png
++catalog.usgin.resource.graphic.fileType.ps      = ps
++catalog.usgin.resource.graphic.fileType.rtf     = rtf
++catalog.usgin.resource.graphic.fileType.sid     = sid
++catalog.usgin.resource.graphic.fileType.svg     = svg
++catalog.usgin.resource.graphic.fileType.tiff    = tiff
++
++
++
++# USGIN DISTRIBUTION ###################################################
++catalog.usgin.distibutor.mainCaption = Distribution
++		
++# USGIN Distributor Information 1 ######################################
++catalog.usgin.distibutor.information.caption = Distribution Information 1
++catalog.usgin.distibutor.information.caption.srv = Distribution Information
++catalog.usgin.distibutor.individualName	 =	Contact Name:							  
++catalog.usgin.distibutor.role			 =	Role:	
++catalog.usgin.distibutor.role.author   			    = Author
++catalog.usgin.distibutor.role.custodian 		    = Custodian
++catalog.usgin.distibutor.role.distributor 		    = Distributor
++catalog.usgin.distibutor.role.originator 	        = Originator
++catalog.usgin.distibutor.role.owner 			    = Owner 
++catalog.usgin.distibutor.role.pointOfContact   		= Point Of Contact
++catalog.usgin.distibutor.role.principalInvestigator = Principal Investigator
++catalog.usgin.distibutor.role.processor             = Processor 
++catalog.usgin.distibutor.role.publisher             = Publisher 
++catalog.usgin.distibutor.role.resourceProvider      = Resource Provider
++catalog.usgin.distibutor.role.user                  = User 
++catalog.usgin.distibutor.email			            = Email:	
++# USGIN Distributor Format ###########################
++catalog.usgin.distibutor.format.caption  = Format
++catalog.usgin.distibutor.formatName		 = Format Name:	
++catalog.usgin.distibutor.formatName.hint = Use MIME type when applicable		  
++catalog.usgin.distibutor.formatVersion 	 = Format Version:
++
++# USGIN Access (used in 19115 only) #################
++catalog.usgin.distibutor.access.caption = Access
++
++# USGIN Online (access) #############################
++catalog.usgin.distibutor.online.caption = Online
++catalog.usgin.distibutor.online.link = Distribution Link:
++catalog.usgin.distibutor.online.link.hint 		 = URL to access resource, use the full GetCapabilities URL for OGC service, URL for WSDL for WS wels services, or URL for similar service description document. 
++catalog.usgin.distibutor.online.linkFunction	 = Distribution Link Function:
++catalog.usgin.distibutor.online.linkCode.download      = Download
++catalog.usgin.distibutor.online.linkCode.webService    = Web Service
++catalog.usgin.distibutor.online.linkCode.information   = Information
++catalog.usgin.distibutor.online.linkCode.offlineAccess = Offline Access
++catalog.usgin.distibutor.online.linkCode.order         = Order
++catalog.usgin.distibutor.online.linkCode.search        = Search
++catalog.usgin.distibutor.online.linkType         = Linkage Type:
++catalog.usgin.distibutor.online.software         = Software:
++catalog.usgin.distibutor.online.software.hint    = Software required to utilize resource information about how online access works
++catalog.usgin.distibutor.online.description      = Description:
++catalog.usgin.distibutor.online.description.hint = Service Description
++
++# USGIN Offline (access) #############################
++catalog.usgin.distibutor.offline.caption = Offline
++catalog.usgin.distibutor.offline.caption.two = Offline
++catalog.usgin.distibutor.offline.caption.three = Offline
++
++# USGIN Standard Order Process (access)       #############################
++catalog.usgin.distibutor.offline.orderProcess.caption = Standard Order Process
++catalog.usgin.distibutor.offline.instruction 	= Ordering Instructions:
++catalog.usgin.distibutor.offline.fee 		    = Fees:
++catalog.usgin.distibutor.offline.turnaround     = Turnaround:
++
++# USGIN Distributor Contact     #########################
++catalog.usgin.distibutor.contact.caption = Distributor Contact	
++catalog.usgin.distributor.organisation   = Organisation:
++catalog.usgin.distributor.positionName   = Position Name/Job Title:
++catalog.usgin.distributor.individualName = Individual Name:
++catalog.usgin.distibutor.telephone		 = Telephone Number:
++catalog.usgin.distibutor.emailaddress    = Email Adress:
++catalog.usgin.distibutor.address		 = Address:						  
++catalog.usgin.distibutor.state			 = State:					  
++catalog.usgin.distibutor.city			 = City:						  
++catalog.usgin.distibutor.postalCode      = Postal Code:
++
++
++# USGIN Service Connection #########################
++catalog.usgin.srvConnection.caption      = Service Connection
++catalog.usgin.srvConnection.descriptURL  = Service Description URL:
++catalog.usgin.srvConnection.descriptURL.hint = Full URL OGC getCapabilities WSDL or similar resource
++catalog.usgin.srvConnection.baseURL      = Service Base URL:
++catalog.usgin.srvConnection.baseURL.hint = Base URL to which request parameters should be appended 
++catalog.usgin.srvConnection.implementation = Server Implementation:
++catalog.usgin.srvConnection.implementation.hint = Name and version of server software implement service (optional)
++catalog.usgin.srvConnection.notes        = Notes:
++catalog.usgin.srvConnection.notes.hint   = Additional information describing service connection
++
++# USGIN Connection Details ##########################
++catalog.usgin.connectionDetails.caption  = Connection Details:
++catalog.usgin.connectionDetails.functionCode.download   =  Function Code:
++catalog.usgin.connectionDetails.functionCode.ddownload      = Download
++catalog.usgin.connectionDetails.functionCode.dinformation   = Information
++catalog.usgin.connectionDetails.functionCode.dofflineAccess = Offline Access
++catalog.usgin.connectionDetails.functionCode.dorder         = Order
++catalog.usgin.connectionDetails.functionCode.dsearch        = Search
++catalog.usgin.connectionDetails.linkType.download       = Linkage Type:
++catalog.usgin.connectionDetails.functionCode.information = Function Code:
++catalog.usgin.connectionDetails.functionCode.idownload      = Download
++catalog.usgin.connectionDetails.functionCode.iinformation   = Information
++catalog.usgin.connectionDetails.functionCode.iofflineAccess = Offline Access
++catalog.usgin.connectionDetails.functionCode.iorder         = Order
++catalog.usgin.connectionDetails.functionCode.isearch        = Search
++catalog.usgin.connectionDetails.linkType.information     = Linkage Type:
++
++# USGIN Keywords #########################################
++catalog.usgin.keywords.caption            = Keywords
++
++# USGIN Keywords ##################################
++catalog.usgin.keywords.theme.caption 	  = Theme Keywords
++catalog.usgin.keywords.theme.themeCaption = Theme:
++catalog.usgin.keywords.theme.theme        	 = Theme
++catalog.usgin.keywords.theme.place        	 = Place
++catalog.usgin.keywords.theme.temporal      	 = Temporal
++catalog.usgin.keywords.theme.keyValue      = Keyword Value:
++catalog.usgin.keywords.idinfo.topicCategory = Topic Category:
++
++# USGIN Related Resource #################################
++catalog.usgin.relResource.caption = Related Resource
++
++# USGIN Related Resource 1 #########################################
++catalog.usgin.relResource1.caption        = Related Resource 
++catalog.usgin.relResource1.title          = Title:
++catalog.usgin.relResource1.pubDate        = Publication Date:
++catalog.usgin.relResource1.dateType       = Date Type:
++catalog.usgin.relResource1.dateType.publication = Publication
++catalog.usgin.relResource1.dateType.creation    = Creation
++catalog.usgin.relResource1.dateType.revision    = Revision
++catalog.usgin.relResource1.URI             = URI:
++catalog.usgin.relResource1.associationType = Association Type:
++
++# USGIN Dataset Served ####################################
++catalog.usgin.dataSrv.caption              = Dataset Served
++catalog.usgin.dataSrv.couplingType         = Coupling Type:
++catalog.usgin.dataSrv.couplingType.mixed         = Mixed
++catalog.usgin.dataSrv.couplingType.tight         = Tight
++catalog.usgin.dataSrv.couplingType.loose         = Loose
++
++# USGIN Dataset  ###########################################
++catalog.usgin.dataSrv1.caption 			   = Dataset 
++catalog.usgin.dataSrv1.srvOperation 	   = Service Operation:
++catalog.usgin.dataSrv1.srvOperation.hint   = Name used to invoke operation
++catalog.usgin.dataSrv1.datasetURI 		   = Dataset Identifier:
++catalog.usgin.dataSrv1.datasetURI.hint 	   = Unique identifier for dataset
++catalog.usgin.dataSrv1.scopeName 		   = Scoped Name in Service:
++catalog.usgin.dataSrv1.scopeName.hint 	   = Layer or feature type name in this service
++
++# USGIN GEOGRAPHIC/ENVELOPE SECTION ##########################
++catalog.usgin.envelope.caption = Geographic
++catalog.usgin.envelope.west = West Bound Longitude:
++catalog.usgin.envelope.east = East Bound Longitude:
++catalog.usgin.envelope.north = North Bound Latitude:
++catalog.usgin.envelope.south = South Bound Latitude:
++
++# USGIN Metadata Record Information ###########################
++catalog.usgin.metadata.information.caption = Metadata Record Information
++catalog.usgin.metadata.individualName	   = Contact Name:
++catalog.usgin.metadata.individualName.hint = Person responsible for metadata maintenance 							  
++catalog.usgin.metadata.role			       = Organisation Role:	
++catalog.usgin.metadata.role.author   			  = Author
++catalog.usgin.metadata.role.custodian 		      = Custodian
++catalog.usgin.metadata.role.distributor 		  = metadata
++catalog.usgin.metadata.role.metadata 		      = Distributor
++catalog.usgin.metadata.role.originator 	          = Originator
++catalog.usgin.metadata.role.owner 			      = Owner 
++catalog.usgin.metadata.role.pointOfContact   	  = Point Of Contact
++catalog.usgin.metadata.role.principalInvestigator = Principal Investigator
++catalog.usgin.metadata.role.processor             = Processor 
++catalog.usgin.metadata.role.publisher             = Publisher 
++catalog.usgin.metadata.role.resourceProvider      = Resource Provider
++catalog.usgin.metadata.role.user                  = User 
++catalog.usgin.metadata.email			   = Email:
++catalog.usgin.metadata.email.hint          = Contact to report problems with this metadata record
++catalog.usgin.metadata.srvVersion          = Service Version:
++catalog.usgin.metadata.typeOfService       = Type Of Service:
++catalog.usgin.metadata.characterSetCode    = Character Encoding:
++# USGIN Metadata Contact Information #############################
++catalog.usgin.metadata.contactInfo.caption = Metdata Contact Information
++catalog.usgin.metadata.individualName = Individual Name:
++catalog.usgin.metadata.positionName   = Position/Job Title Name:
++catalog.usgin.metadata.organisation   = Organisation:
++catalog.usgin.metadata.country        = Country:
++catalog.usgin.metadata.state 		  = State:
++catalog.usgin.metadata.city			  = City:
++catalog.usgin.metadata.postalCode	  = Postal Code:
++catalog.usgin.metadata.telephone      = Telephone Number:
++catalog.usgin.metadata.email          = Email Address:
++catalog.usgin.metadata.contactURL	  = Webiste:
++
++# USGIN Metadata General Information ###########################
++catalog.usgin.metadata.general.caption    = General Information
++catalog.usgin.metadata.fileIdentifier     = File Identifier:
++catalog.usgin.metadata.mdLanguage         = Metadata Language:
++catalog.usgin.metadata.mdCharacterSet     = Metadata Character Set:
++catalog.usgin.metadata.hierarchyLevel     = Hierarchy Level:
++catalog.usgin.metadata.hierarchyLevel.dataset 			   = Dataset
++catalog.usgin.metadata.hierarchyLevel.series			   = Series
++catalog.usgin.metadata.hierarchyLevel.nonGeographicDataset = NonGeographic Dataset
++catalog.usgin.metadata.hierarchyLevel.software 			   = Software
++catalog.usgin.metadata.hierarchyLevel.model                = Model
++catalog.usgin.metadata.hierarchyLevel.service              = Service
++catalog.usgin.metadata.hierarchyLevelName = Hierarchy Level Name:
++catalog.usgin.mdCode.resourceType.Collection = Collection
++catalog.usgin.mdCode.resourceType.Collection.Dataset = Dataset
++catalog.usgin.mdCode.resourceType.Collection.Dataset.Catalog = Catalog
++catalog.usgin.mdCode.resourceType.Collection.PhysicalArtifactCollection = Physical artifact collection
++catalog.usgin.mdCode.resourceType.Document = Document
++catalog.usgin.mdCode.resourceType.Document.Image = Image
++catalog.usgin.mdCode.resourceType.Document.Image.StillImage = StillImage
++catalog.usgin.mdCode.resourceType.Document.Image.StillImage.HumanGeneratedImage = Human-generated image
++catalog.usgin.mdCode.resourceType.Document.Image.StillImage.Photograph = Photograph
++catalog.usgin.mdCode.resourceType.Document.Image.StillImage.RemoteSensingEarthImage = Remote sensing Earth image
++catalog.usgin.mdCode.resourceType.Document.Image.StillImage.HumanGeneratedImage.Map = Map
++catalog.usgin.mdCode.resourceType.Document.Image.MovingImage = MovingImage
++catalog.usgin.mdCode.resourceType.Document.Sound = Sound
++catalog.usgin.mdCode.resourceType.Document.Text = Text
++catalog.usgin.mdCode.resourceType.Document.Text.HypertextDocumentCollection = Hypertext document collection
++catalog.usgin.mdCode.resourceType.Event = Evensst
++catalog.usgin.mdCode.resourceType.Event.Project = Project
++catalog.usgin.mdCode.resourceType.Model = Model
++catalog.usgin.mdCode.resourceType.PhysicalArtifact = Physical artifact
++catalog.usgin.mdCode.resourceType.Service = Service
++catalog.usgin.mdCode.resourceType.Software = Software
++catalog.usgin.mdCode.resourceType.Software.Stand-AloneApplication = Stand-Alone­Application
++catalog.usgin.mdCode.resourceType.Software.InteractiveResource = Interactive­Resource
++catalog.usgin.mdCode.resourceType.StructuredDigitalDataItem = Structured digital data item
++catalog.usgin.mdCode.resourceType.StructuredDigitalDataItem.SamplingPointSiteStation = Sampling point, site, station
++catalog.usgin.metadata.mdDate             = Metadata Date:
++catalog.usgin.metadata.mdStandardName     = Metadata Standard Name:
++catalog.usgin.metadata.mdStandardVersion  = Metadata Standard Version:
++catalog.usgin.metadata.maintenanceStatus  = Metadata Maintenance Status:
++catalog.usgin.metadata.status.completed	        = Completed
++catalog.usgin.metadata.status.historicalArchive = Historical Archive
++catalog.usgin.metadata.status.obsolete          = Obsolete 
++catalog.usgin.metadata.status.onGoing           = On Going
++catalog.usgin.metadata.status.planned           = Planned 
++catalog.usgin.metadata.status.required          = Required  
++catalog.usgin.metadata.status.underDevelopment  = Under Development
++
++# USGIN Metadata Source Organization Logo ###########################
++catalog.usgin.metadata.orgLogo.caption     = Metadata Source Organization Logo
++catalog.usgin.metadata.orgLogo.label       = Label:
++catalog.usgin.metadata.orgLogo.label.hint  = This icon will be displayed to identify source of metadata record
++catalog.usgin.metadata.orgLogo.logoGraphic = Logo Graphic:
++catalog.usgin.metadata.orgLogo.logoGraphic.hint = URL for image logo, 50 by 50 pixels
++catalog.usgin.metadata.orgLogo.labelIcon   = Label:
++
++
++#USGIN MD_Topic Category Codes #######################################
++catalog.usgin.mdParam.theme.topics = Topic Category
++catalog.mdCode.usgin.topic.boundaries = Boundaries
++catalog.mdCode.usgin.topic.farming = farming
++catalog.mdCode.usgin.topic.climatologyMeteorologyAtmosphere = climatologyMeteorologyAtmosphere
++catalog.mdCode.usgin.topic.biota = Biota
++catalog.mdCode.usgin.topic.economy = economy
++catalog.mdCode.usgin.topic.planningCadastre = planningCadastre
++catalog.mdCode.usgin.topic.society = society
++catalog.mdCode.usgin.topic.elevation = elevation
++catalog.mdCode.usgin.topic.environment = environment
++catalog.mdCode.usgin.topic.structure = structure
++catalog.mdCode.usgin.topic.geoscientificInformation = geoscientificInformation
++catalog.mdCode.usgin.topic.health = health
++catalog.mdCode.usgin.topic.imageryBaseMapsEarthCover = imageryBaseMapsEarthCover 
++catalog.mdCode.usgin.topic.inlandWaters = inlandWaters
++catalog.mdCode.usgin.topic.location = location
++catalog.mdCode.usgin.topic.oceans = oceans
++catalog.mdCode.usgin.topic.transportation = transportation
++
++
++
++catalog.mdCode.usgin.topic.utilitiesCommunication = utilitiesCommunication
++# USGIN Title
++catalog.usgin.identificationinfo.title = Title:
++
++# USGIN Metadata Use Constraints ######################################
++catalog.usgin.metadata.constraint.caption = Metadata Use Constraints
++catalog.usgin.metadata.constraint = Constraints:
++catalog.usgin.metadata.constraint.hint = Summary of legal or security constraints on use of this metadata record
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
